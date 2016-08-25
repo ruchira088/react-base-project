@@ -17,6 +17,10 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loaders: ["style", "css", "sass"]
+			},
+			{
+				test: /\.jpg$|.png$|.svg$|.jpeg$/,
+				loader: "file?name=[path][name].[ext]"
 			}
 		]
 	}
