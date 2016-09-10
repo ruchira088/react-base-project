@@ -1,0 +1,38 @@
+.rating-star
+{
+  display: inline-block;
+  padding: 0 5px;
+
+  .rating-star-half
+  {
+    display: inline-block;
+
+    .rating-star-half-left {
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+    }
+
+    .rating-star-half-right {
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .rating-star-half-left, .rating-star-half-right
+    {
+      background-color: red;
+      width: 20px;
+      height: 40px;
+
+      &.enabled
+      {
+        background-color: blue;
+
+        &.is-hover
+        {
+          background-color: green;
+        }
+      }
+
+    }
+  }
+}
