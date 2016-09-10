@@ -19,7 +19,7 @@ const SampleCmpnt = React.createClass({
 			<div id="title">
 				Hello World
 				<img src={catSrc}/>
-				<RatingComponent onValueChange={rating => this.setState({rating})} stars={10}/>
+				<RatingComponent onValueChange={rating => this.setState({rating})} stars={10} hasHalfStars={false}/>
 				<div>
 					Rating {rating}
 				</div>

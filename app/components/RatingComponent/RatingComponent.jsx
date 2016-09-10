@@ -27,7 +27,7 @@ export default React.createClass({
     },
     render()
     {
-        const {stars = 5} = this.props
+        const {stars = 5, hasHalfStars = true} = this.props
         const {value, hoverValue} = this.state
 
         const isEnabled = index => isRight => {
@@ -51,11 +51,11 @@ export default React.createClass({
                             return (
                                 <Star key={index}
                                       isHover={hoverValue != null}
-                                      leftEnabled={sideEnabled(false)}
+                                      leftEnabled={sideEnabled(!hasHalfStars)}
                                       rightEnabled={sideEnabled(true)}
-                                      onMouseEnterLeft={() => this.setState({hoverValue: index + 0.5})}
+                                      onMouseEnterLeft={() => this.setState({hoverValue: index + (hasHalfStars ? 0.5 : 1)})}
                                       onMouseEnterRight={() => this.setState({hoverValue: index + 1})}
-                                      onClickLeft={() => this.setValue(index + 0.5)}
+                                      onClickLeft={() => this.setValue(index + (hasHalfStars ? 0.5 : 1))}
                                       onClickRight={() => this.setValue(index + 1)}
                                 />)
                         }
